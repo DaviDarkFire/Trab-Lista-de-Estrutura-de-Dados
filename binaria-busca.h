@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct no{
 	int chave;
 	struct no *esq;
@@ -9,3 +11,6 @@ int insere(int, no**);
 int remover(int, no**);
 int cria_arvore(no**, char*);
 int imprime(no**);
+no* cria_no(int);
+no* maior(no*);
+no* menor(no*);
