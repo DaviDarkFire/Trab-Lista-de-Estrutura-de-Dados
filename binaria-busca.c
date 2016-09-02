@@ -9,6 +9,13 @@ no* cria_no(int x){
 
 }
 
+void cria_raiz(no** raiz, int x){
+	(*raiz) = (no *)malloc(sizeof(no));
+	(*raiz)->chave = x;
+	(*raiz)->esq = NULL;
+	(*raiz)->dir = NULL;
+}
+
 no* maior(no* no){
 	while(no->dir != NULL){
 		no = no->dir;
@@ -122,12 +129,19 @@ int busca(int x, no** raiz, no* pai){
 
 }
 
-int cria_arvore(no** raiz, char* arq){
+void cria_arvore(no** raiz, char* arq){
 	FILE* arquivo = fopen(arq, "r");
 	int num;
+	int aux = 1;
 	while(!feof(arquivo)){
         	fscanf(arquivo,"%d", &num);
-        	insere(num, raiz);
-    }
-	return 1;
+
+        	if(aux == 1){
+        		cria_raiz(raiz, num);
+        		aux = 0;
+        	}else{
+        		insere(num, raiz);	
+        	}
+        	
+    }	
 }

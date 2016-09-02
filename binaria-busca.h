@@ -9,8 +9,9 @@ typedef struct no{
 int busca(int, no**, no*);
 int insere(int, no**);
 int remover(int, no**);
-int cria_arvore(no**, char*);
+void cria_arvore(no**, char*);
 int imprime(no**);
 no* cria_no(int);
 no* maior(no*);
 no* menor(no*);
+void cria_raiz(no**, int);
