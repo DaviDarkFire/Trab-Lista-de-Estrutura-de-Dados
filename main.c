@@ -2,7 +2,8 @@
 #include "binaria-busca.h"
 
 int main(int argc, char *argv[]){
-	no** raiz;
-	cria_arvore(raiz, argv[1]);
-	return 0;
+	no* raiz;
+	cria_arvore(argv[1], &raiz);
+	pre_ordem(raiz);
+
 }
